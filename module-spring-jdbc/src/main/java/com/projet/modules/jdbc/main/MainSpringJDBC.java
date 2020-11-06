@@ -12,6 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.projet.modules.jdbc.bean.table.Comments;
 import com.projet.modules.jdbc.config.AppConfiguration;
 import com.projet.modules.jdbc.dao.CommentsDao;
+import com.projet.modules.jdbc.dao.CustomerDao;
 
 import lombok.extern.log4j.Log4j;
 
