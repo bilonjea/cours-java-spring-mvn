@@ -1,5 +1,8 @@
 name: learn-github-actions
-on: [push]
+on:
+  push:
+    branches-ignore: 
+      - test 
 jobs:
   job-check-bats-version:
     runs-on: ubuntu-latest
