@@ -6,7 +6,8 @@ on:
     - test  # adding branc test
 
 jobs:
-  build:
+  job1:
+    name: Job build 
     runs-on: ubuntu-latest
 
     steps:
