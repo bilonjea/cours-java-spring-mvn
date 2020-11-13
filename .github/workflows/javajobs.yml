@@ -148,8 +148,8 @@ jobs:
         run: mvn deploy
         env:
           GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password
-    
-    Job8: 
+  
+  Job8: 
        name: Job8 Publish SonarQube
        runs-on: ubuntu-20.04 
        steps:
@@ -160,12 +160,14 @@ jobs:
              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           run: |
                 java -version
+                mvn clean verify
                 if [ -n $SONAR_TOKEN ]; then
-                    ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{ secrets.SONAR_ORGANISATION_KEY }} -Dsonar.host.url=${{ secrets.SONAR_URL }}
+                    mvn initialize sonar:sonar -Dsonar.organization=${{ secrets.SONAR_ORGANISATION_KEY }} -Dsonar.host.url=${{ secrets.SONAR_URL }}
                 else
                     echo No SONAR_TOKEN, skipping...
-                fi
-    job10:
+                fi  
+  
+  job10:
       name: Deploy to Herroku
       #needs: pipeline
       runs-on: ubuntu-latest
@@ -177,4 +179,5 @@ jobs:
             heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
             heroku_email: ${{secrets.HEROKU_EMAIL}}
             branch: "master"
-            buildpack: ${{secrets.HEROKU_BUILD_PACK}}
+            buildpack: ${{secrets.HEROKU_BUILD_PACK}}  
+    
