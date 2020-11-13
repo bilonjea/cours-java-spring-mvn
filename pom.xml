@@ -11,6 +11,32 @@
   	<module>module-spring-annotation</module>
   	<module>module-spring-jdbc</module>
   </modules>
+
+  	<scm>
+        <connection>scm:git:git@github.com:bilonjea/coursspringmvn.git</connection>
+        <developerConnection>scm:git:git@github.com:bilonjea/coursspringmvn.git</developerConnection>
+        <url>scm:git:git@github.com:bilonjea/coursspringmvn.git</url>
+        <tag>HEAD</tag>
+    </scm>
+    
+
+    <repositories>
+        <!-- jhipster-needle-maven-repository -->
+    </repositories>
+
+    <pluginRepositories>
+        <!-- jhipster-needle-maven-plugin-repository -->
+    </pluginRepositories>
+    <!-- Define publishing repository Java packages -->
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/bilonjea/coursspringmvn</url>
+        </repository>
+       
+    </distributionManagement>
   
   <developers>
 		<developer>
@@ -38,12 +64,7 @@
 		</contributor>
 	</contributors>
 
-	<scm>
-		<connection>scm:git:git://github.com/bilonjea/afpamvn.git</connection>
-		<developerConnection>scm:git:git://github.com/bilonjea/afpamvn.git</developerConnection>
-		<url>http://github.com/bilonjea/afpamvn</url>
-	</scm>
-
+	
 	<licenses>
 		<license>
 			<name>GNU Lesser General Public License (LGPL), Version 3</name>
